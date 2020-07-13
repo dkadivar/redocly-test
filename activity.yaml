@@ -1,0 +1,155 @@
+openapi: "3.0.0"
+info:
+  title: API to get activities
+  version: 1.0.0
+servers:
+  - url: https://app.fpg-ingauge.com
+paths:
+  /pulse/api/vplActivity/secure/getActivitiesData/{{locationId}}:
+    get:
+      operationId: getActivitiesData
+      summary: Get activities for location.
+      parameters:
+        - name: agentId
+          in: query
+          description: Limit the activities of single agent
+          schema:
+            type: integer
+        - name: leaderId
+          in: query
+          description: Limit the activites for single Performance Leader
+          schema:
+            type: integer
+        - name: approverId
+          in: query
+          description: Limit the activites for single Approver
+          schema:
+            type: integer
+        - name: startDate
+          in: query
+          description: Format is YYYY-MM-DD. Limit the activites for a date range. endDate is required to select date range
+          schema:
+            type: String
+        - name: endDate
+          in: query
+          description: Format is YYYY-MM-DD. Limit the activites for a date range. startDate is required to select date range
+          schema:
+            type: String
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            application/json:
+              examples: 
+                foo:
+                  value:
+                    Response:
+                        {
+                            "data": [
+                                {
+                                    "agentId": 19293,
+                                    "agentLastName": "Edwards",
+                                    "locationName": "Hilton Riverside",
+                                    "timeSpent": 3600000,
+                                    "virtualPerformanceLeaderId": 16590,
+                                    "launchDate": 1572637500000,
+                                    "type": "Virtual Session - Full",
+                                    "agentEmployeeId": "KE0891",
+                                    "virtualPerformanceLeaderLastName": "Almodovar",
+                                    "agreedDate": 1572633900000,
+                                    "agentFirstName": "Kara",
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderEmployeeId": "OA3077",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Omar",
+                                    "status": "Normal"
+                                },
+                                {
+                                    "virtualPerformanceLeaderLastName": "Ramadani",
+                                    "locationName": "Hilton Riverside",
+                                    "agreedDate": 1578686400000,
+                                    "timeSpent": 1800000,
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderId": 15396,
+                                    "launchDate": 1578688200000,
+                                    "type": "Virtual Session-No show",
+                                    "virtualPerformanceLeaderEmployeeId": "RR9892",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Rand",
+                                    "status": "Normal"
+                                },
+                                {
+                                    "virtualPerformanceLeaderLastName": "Ramadani",
+                                    "locationName": "Hilton Riverside",
+                                    "agreedDate": 1579291200000,
+                                    "timeSpent": 3600000,
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderId": 15396,
+                                    "launchDate": 1579294800000,
+                                    "type": "Virtual Session - Full",
+                                    "virtualPerformanceLeaderEmployeeId": "RR9892",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Rand",
+                                    "status": "Normal"
+                                },
+                                {
+                                    "virtualPerformanceLeaderLastName": "Ramadani",
+                                    "locationName": "Hilton Riverside",
+                                    "agreedDate": 1580151600000,
+                                    "timeSpent": 3600000,
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderId": 15396,
+                                    "launchDate": 1580155200000,
+                                    "type": "Virtual Session - Full",
+                                    "virtualPerformanceLeaderEmployeeId": "RR9892",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Rand",
+                                    "status": "Normal"
+                                },
+                                {
+                                    "virtualPerformanceLeaderLastName": "Rich",
+                                    "locationName": "Hilton Riverside",
+                                    "agreedDate": 1580149500000,
+                                    "timeSpent": 3600000,
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderId": 30617,
+                                    "launchDate": 1580153100000,
+                                    "type": "Virtual Session - Full",
+                                    "virtualPerformanceLeaderEmployeeId": "KR9156",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Kerri",
+                                    "status": "Normal"
+                                },
+                                {
+                                    "virtualPerformanceLeaderLastName": "Ramadani",
+                                    "locationName": "Hilton Riverside",
+                                    "agreedDate": 1581105600000,
+                                    "timeSpent": 3600000,
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderId": 15396,
+                                    "launchDate": 1581109200000,
+                                    "type": "Virtual Session - Full",
+                                    "virtualPerformanceLeaderEmployeeId": "RR9892",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Rand",
+                                    "status": "Normal"
+                                },
+                                {
+                                    "virtualPerformanceLeaderLastName": "Ramadani",
+                                    "locationName": "Hilton Riverside",
+                                    "agreedDate": 1582315200000,
+                                    "timeSpent": 3600000,
+                                    "locationId": 1,
+                                    "virtualPerformanceLeaderId": 15396,
+                                    "launchDate": 1582318800000,
+                                    "type": "Virtual Session - Full",
+                                    "virtualPerformanceLeaderEmployeeId": "RR9892",
+                                    "pipedriveId": null,
+                                    "virtualPerformanceLeaderFirstName": "Rand",
+                                    "status": "Normal"
+                                }
+                            ],
+                            "status": "SUCCESS",
+                            "statusCode": 200
+                        }   
